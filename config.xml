@@ -16,7 +16,7 @@
   <author href="http://www.kids2prosports.com" email="farooq.basit@gmail.com">
     Adnan Latif
   </author>
-  <icon src="icon.png" gap:role="default" />
+  <icon src="images/icon.png" gap:role="default" />
   <!--icons -->
   
         <!-- webos -->
