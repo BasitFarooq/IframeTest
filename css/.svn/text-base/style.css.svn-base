@@ -1,30 +1,24 @@
 @charset "utf-8";
+/* CSS Document */
 /*
 Theme Name: Kids2prosports
 Theme URI: http://www.kids2prosports.com
-Author: 2BVision
+Author: putITout
 Author URI: http://www.2bvision.com/
 Description:kids2prosports 2012
 Version: 2012
 */
 /* ==|== primary styles =====================================================
 Author: Ubaid Omar
-/* generic classes begins */ 
- * { margin:0; padding:0; border:0 none;  outline:none; }
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
-audio:not([controls]) { display: none; }
-[hidden] { display: none; }
+========================================================================== */
+/* generic classes begins */
+*, html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video  { margin:0; padding:0; border:0 none; outline:none; }
 
-html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; letter-spacing:0; }
-body { margin: 0; font-size: 12px; behavior:url("css3.htc"); }
-button, input, select, textarea { font-family:Arial, Helvetica, sans-serif; color:#222; }
-
-body { margin:0; background:#ffffff; color:#474747; }
-
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
-
+body {
+    font-size: 100%;
+	font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -84,9 +78,11 @@ a:hover {
 .clear {
     clear: both;
 }
-ul { margin:5px;}
-ul li { font-size:12px; margin-bottom:3px; line-height:17px; list-style-type:none; padding:0;  }
-h1 { font-size: 13px; line-height:17px; font-weight: bold; visibility: visible !important; color:#680000; margin-bottom:5px; }
+h1 {
+    font-size: 22px;
+    font-weight: normal;
+    visibility: visible !important;
+}
 h2 {
     font-family: Formata,Arial,Helvetica,sans-serif !important;
     font-size: 18px;
@@ -95,7 +91,13 @@ h2 {
     text-transform: uppercase;
     visibility: visible !important;
 }
-h3 { font-size: 1em; line-height:16px; color:#000000; font-weight:normal; margin:5px 0 3px 0; }
+h3 {
+    font-size: 1em;
+	line-height:16px;
+	color:#000000;
+	font-weight:normal;
+	margin:5px 0 0 0;
+}
 h4 {
     font-size: 15px;
 	color:#680000;
@@ -116,7 +118,13 @@ h6 {
     font-weight: normal;
     padding-bottom: 5px;
 }
-p {	color: #000000; font-size: 12px; line-height: 17px; margin: 0 0 10px; padding: 0; font-weight:normal; }
+p {	
+	color: #000000;
+    font-size: 11px;
+    line-height: 16px;
+    margin: 0 0 10px;
+    padding: 0;
+}
 em {
 	color:#ff9000;
 }
@@ -134,28 +142,25 @@ em {
 #wraper {
     width: 100%; margin:0 auto;
 }
-#outerBg { margin:0 auto; background:url (../images/mainBg.jpg) no-repeat left top; min-height: }
+#outerBg { background:#861c1c url(../images/bgimg.jpg) no-repeat center top; margin:0 auto; min-height:420px;}
 .logoMain { height:91px; width: 227px; margin:0 auto;}
 .logoMain a {
 	background:url(../images/logo2.png) no-repeat left top;
 	height: 91px; width: 227px; overflow: hidden; display:block; }
-#outerBg p{ color:#000000; text-align:center;}
+#outerBg p{ color:#ffffff; text-align:center;}
 .guest {margin:20px auto 5px auto; width:172px;}
-.guest a { background:url(../images/guest.png) no-repeat left top; font-size: 12px; list-style-type:none; text-decoration:none; width:172px;  display:block; height:30px;}
+.guest a { background:url(../images/guest.png) no-repeat left top; padding:0 86px; font-size: 12px; list-style-type:none; text-decoration:none; width:172px;  display:block; height:30px;}
 .login {margin:0 auto; text-align:center;}
 a#login {background:url(../images/login.png) no-repeat left top; font-size: 12px; list-style-type:none; text-decoration:none; width:112px; height:30px; margin:0 20px 0 0; display:inline-block;}
 a#regg {background:url(../images/register.png) no-repeat left top; font-size: 12px; list-style-type:none; text-decoration:none; width:112px; height:30px; display:inline-block;}
 
-/* three Tabsasdfasdf */
+/* three Tabs */
+#navtabs {
+			 margin:20px auto;  text-align:center; 
+}
 
-#centerTabs { margin:20px auto; text-align:center }
-a#thire1 {background:url(../images/welcomeBtn.png) no-repeat left top; display:inline-block; width:116px; height:34px; }
-a#thire2 {background:url(../images/sports.png) no-repeat left top; display:inline-block; width:116px; height:34px; }
-a#thire3 {background:url(../images/Multi.png) no-repeat left top; display:inline-block; width:116px; height:34px; }
-a#thire4 {background:url(../images/discoverBtn.png) no-repeat left top; display:inline-block; width:116px; height:34px; }
-a#thire5 {background:url(../images/mediaBtn.png) no-repeat left top; display:inline-block; width:116px; height:34px; }
-
-
+#navtabs a#thire {background:url(../images/tabBg.png) no-repeat left top; font-size: 12px; list-style-type:none; text-decoration:none;  color:#333333; display:inline-block;  margin:0 2px 2px 2px; width:116px; height:34px; line-height:34px;
+}
 
 /* header starts */
 header {
@@ -238,6 +243,24 @@ defultMenubackground: url(../images/small-arrows.png) no-repeat center top;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* header ends */
 /* Nav starts */
 nav {
@@ -247,9 +270,22 @@ nav {
     width: 100%;
     z-index: 99;
 }
-nav ul { margin:0; padding:0; list-style-type: none; }
-nav li { margin:0; padding:0; float: left; height:57px; width:20%; }
-nav li a, nav li a:visited { margin:0; padding:0; display: block; height: 57px; line-height: 57px; text-align: center; color:#ffffff; font-size:12px; }
+nav ul {
+    list-style-type: none;
+}
+nav li {
+ 	float: left;
+    height:57px;
+	width:20%;
+}
+nav li a, nav li a:visited {
+ 	display: block;
+    height: 57px;
+    line-height: 57px;
+    text-align: center;
+	color:#ffffff;
+	font-size:0.8em;
+}
 nav li a:hover {
     color: #ffffff;
     text-decoration: underline;
@@ -385,7 +421,7 @@ nav li:hover { background:#6f0505; height:53px;}
 .loginTabs a, .loginTabs a:visited { float:left; display:block; width:130px; height:31px; font-size: 11px;  line-height:31px; background:url(../images/tabs.png) no-repeat left top; color:#333; text-decoration:none; text-transform:uppercase; text-align:center; font-weight:bold; }
 
 .loginTabs a.blue, .loginTabs a.blue:visited { float:left; display:block; width:130px; font-size: 11px; height:31px; line-height:31px; background: url(../images/tabs.png) no-repeat 0 -31px; color:#8b0017; text-decoration:none; text-transform:uppercase; text-align:center; font-weight:bold; }
-.loginWrap label { width:103px;  float:left; font-weight:bold; color:#333; font-size: 11px; }
+.loginWrap label { width:100px;  float:left; font-weight:bold; color:#333; font-size: 11px; }
 .loginArea table td{ padding:0 2px; }
 input[type="submit"], input[type="button"], .btn {border:1px solid #00531b; color:#ffffff; padding:5px 10px; font-weight:bold; background:url(../images/bg_top.gif) repeat-x 0 -12px; }
 .loginWrap input[type="text"]{ border:1px solid #cccccc; font-size:11px; padding:2px; width:177px; }
@@ -420,10 +456,11 @@ input[type="submit"], input[type="button"], .btn {border:1px solid #00531b; colo
 	font-size:0.9em;
 	color:#000000;	
 }
-.sportSubNav { margin-bottom: 5px; width: 100%; }
-.sportSubNav a{ background:#F9F9F9; width: 98%; color:#000000; display: block; font-size: 11px;  padding: 1%; text-decoration: none; text-transform: uppercase; border:1px  solid #D6D9D9; }
-.sportSubNav a:hover { background:#efefef; }
-.sportSubNav a span{ display: block;  font-weight: bold; }
+.sportSubNav { margin-bottom: 15px; width: 20%; }
+.sportSubNav a{ background:#A71930; width: 82%; color:#ffffff; display: block;
+    float: left; font-size: 11px;  padding: 2%; text-decoration: none; text-transform: uppercase; border:2px  solid #000000; }
+.sportSubNav a:hover { background:#721120; }
+.sportSubNav a span{ display: block;  text-align:center; font-weight: bold; }
 
 #ageRegister {
 	margin:20px 0;
@@ -432,28 +469,68 @@ input[type="submit"], input[type="button"], .btn {border:1px solid #00531b; colo
 	
 }
 
-.contentLeft { width:85%;}
-.contentRight { width:13%; background:#800000; border:1px solid #000000; }
-.contentRight  a img {display:block;}
+.contentLeft { width:75%;}
+.contentRight { width:22%; background:#0CF; height:500px;}
 
-.para{ border: 1px solid #0033FF; color: #000000; font-size: 11px; line-height: 16px; margin: 10px 0 0; padding: 10px 5px;	
+.para{
+	border: 1px solid #0033FF;
+    color: #000000;
+    font-size: 11px;
+    line-height: 16px;
+    margin: 10px 0 0;
+    padding: 10px 5px;	
 }
 
 /* container ends */
 
 /* footer starts */
-#footerWrap { background:#8a090c; padding:10px; font-size:12px; }
-footer {  overflow:hidden; }
-footer a, footer a:visited { color: #ffffff; display: inline-block; height: 15px; line-height: 15px; padding: 4px 0 4px 10px;
-    text-decoration: none; width:135px; text-transform: uppercase; }
-footer a:hover { background:#520507; color: #FFFFFF; text-decoration: none; }
-.dots { background: url(../images/dots.gif) repeat-x scroll left bottom transparent; font-size: 0; height: 2px; margin: 5px 7px 7px 6px;
+#footerWrap {
+	background:#8a090c;
+    padding:10px 0;
 }
-.copyright { color: #ffffff; float: left; font-size: 10px; height: 20px; line-height: 10px; margin-left: 6px; text-transform: uppercase;
-    }
-.socialAddThis { }
-.socialIcons { text-align:center; margin:5px 7px 5px 0; overflow:hidden }
-/* ---------------------- */
+footer {
+    margin: 0 12px;
+    font-size: 12px;
+    padding: 12px 10px;
+	text-align:center;
+}
+footer a, footer a:visited {
+    color: #ffffff;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    margin: 0 10px 0 0;
+    padding: 3px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+footer a:hover {
+    background:#520507;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.dots {
+    background: url(../images/dots.gif) repeat-x scroll left bottom transparent;
+    font-size: 0;
+    height: 2px;
+    margin: 5px 7px 7px 6px;
+}
+.copyright {
+    color: #ffffff;
+    float: left;
+    font-size: 10px;
+    height: 20px;
+    line-height: 10px;
+    margin-left: 6px;
+    text-transform: uppercase;
+    width: 230px;
+}
+.socialIcons {
+    float: right;
+    height: 20px;
+    margin-right: 7px;
+	line-height:26px;
+}
 
 /* General Sports Grid   Under
 http://www.kids2prosports.com/SportsDefinitions.aspx */
@@ -487,21 +564,3 @@ http://www.kids2prosports.com/SportsDefinitions.aspx */
 ul.list{ margin:0; padding:0; list-style-type:decimal; font-size:11px}
 ul.list li{ margin:0; padding:0; list-style-type:decimal; line-height:16px;}
 .centerHeading { text-align:center;}
-.errorLogin{height:20px;}
-
-.errorLogin label{width:80%; color:#F00;font-size:10px;}
-
-
-p.affiiliate {  margin-bottom:10px; overflow:hidden; text-align:justify; }
-p.affiiliate img { float:left; margin:0 5px 5px 0; width:110px;}
-/* faq */
-
-.faqList { margin:10px 0;}
-.faqList ul { margin:0; padding:0;}
-.faqList ul li { width:45%; float:left; list-style-type:none; margin:0 10px 2px 0; padding:0;  }
-.faqList ul li a, .faqList ul li a:visited { margin:0; padding:0; display:block; float:left; text-decoration:none;}
-
-
-
-.aaa {}
-.aaa a {display:block !important;}
