@@ -7,8 +7,22 @@
     <meta content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;"
         name="viewport" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        function loaded() {
+            var visitor = navigator.onLine ? "ONLINE" : "OFFLINE";
+
+            if (visitor == "ONLINE") {
+                window.location.hrf = "index.html";
+            } else if (visitor == "OFFLINE") {
+                alert("Active Internet Connection Required");
+               
+            }
+        }
+   </script>
+
 </head>
-<body>
+<body onload="loaded()">
     
         <div id="wraper">
        <header style="overflow:hidden;">

@@ -21,18 +21,17 @@
          var visitor = navigator.onLine ? "ONLINE" : "OFFLINE";
 
          if (visitor == "ONLINE") {
-  
              makeFrame();
          } else if (visitor == "OFFLINE") {
              alert("Active Internet Connection Required");
-             window.close();
+             window.location.hrf = "index.html";
          }
      }
    </script>
    <!--onload="loadJQuery()"-->
 </head> 
 <body onload="loaded()" > 
-    <iframe scrolling="yes"  id="IFRAME"></iframe>
+    <iframe style="overflow:hidden" scrolling="yes"  id="IFRAME"></iframe>
 </body>
 
 </html>
