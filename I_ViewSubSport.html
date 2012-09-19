@@ -10,7 +10,7 @@
  <script language="JavaScript" type="text/javascript">
     function makeFrame() {
         ifrm = document.getElementById("IFRAME");
-        ifrm.setAttribute("src", "http://2bvision.com/Kids2promobile/mobileversion/SportsDefinitions.html");
+        ifrm.setAttribute("src", "http://2bvision.com/Kids2promobile/mobileversion/ViewSubSport.html?SportName=Sports%20Health%20and%20Fitness");
         ifrm.style.width = 100 + "%";
         ifrm.style.height = 900 + "px";
         document.body.appendChild(ifrm);
@@ -21,11 +21,10 @@
          var visitor = navigator.onLine ? "ONLINE" : "OFFLINE";
 
          if (visitor == "ONLINE") {
-  
              makeFrame();
          } else if (visitor == "OFFLINE") {
              alert("Active Internet Connection Required");
-             window.close();
+             window.location.hrf = "index.html";
          }
      }
    </script>
