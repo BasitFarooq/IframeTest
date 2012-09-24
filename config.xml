@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
-    id        = "kids2prosports"
+    id        = "kidstoprosports"
     versionCode="12"
     version   = "1.0.0">
 
@@ -10,7 +10,7 @@
   <name>Kids2ProSports</name>
 
   <description>
-    Kids2ProSports is the world’s premier multicultural Global Sports Network and Legacy Search Engine. It’s exclusive “Timeline Features” provide the resources to Create, Share and Preserve “Your Sports Legacy“ from Childhood… to Professional and Beyond.
+    Kids2ProSports is the world premier multicultural Global Sports Network and Legacy Search Engine.
   </description>
 
   <author href="http://www.kids2prosports.com" email="farooq.basit@gmail.com">
