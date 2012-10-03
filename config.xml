@@ -17,14 +17,13 @@
   <author href="http://www.kids2prosports.com" email="farooq.basit@gmail.com">
     2Bvision
   </author>
-  <icon src="images/icon.png" gap:role="default" />
+  <icon src="icons/ios/icon.png" gap:role="default" />
   <!--icons -->
   
       
         <!-- iphone -->
         <icon src="icons/ios/icon.png" width="57" height="57" />
-        <icon src="icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
-        <icon src="icons/ios/icon_at_2x.png" width="114" height="114" />
+       
         
         
   
