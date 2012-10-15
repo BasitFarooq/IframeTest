@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SportsDefinitions</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
+    <meta content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;"
+        name="viewport" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/media/images/favicon.ico" />
+    <link href="media/css/demo_table.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/demo_page.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+
+        $(document).ready(function () {
+            var online = navigator.onLine;    // Detecting the internet connection
+            if (online) {
+                // do your stuff
+            } else {
+                alert('You\'re Offline now...');
+                return false;
+            }
+        
+            $('#example').dataTable();
+            function renderTable(result) {
+                var dtData = [];
+                $.each(result, function () {
+                    dtData.push([
+                          this.Name,  
+                           this.Sport
+
+                        ]);
+                });
+               
+                $('#SportsGrid').dataTable({ //SportsGrid is the id of the table
+                    'aaData': dtData,
+                    'bLengthChange': false,
+                    'bRetrieve': true,
+		            'bFilter': true,
+		            'bSort': false,
+		            'bInfo': false
+                });
+            }
+
+            $.ajax({
+                url: 'http://2bvision.com/kids2promobile/SourceSportDataGrid.asmx/GetAllSports',
+                type: 'POST',
+                data: "{'HasGenderAge': '" + false + "','IsCountry':'" + false + "' ,'IsCollegeInt':'" + false + "','IsCollegeUSA':'" + false + "' ,'IsOlympic':'" + false + "'  ,'MajorSport':'Special Olympics','MajorSport2':'High School'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+              
+                    renderTable(response.d);
+                },
+                failure: function (errMsg) {
+                    $('#errorMessage').text(errMsg); //errorMessage is id of the div
+                }
+            });
+
+        });
+
+        $(document).ready(function () {
+            $("#SportsGrid tbody tr").live('click', function () {
+                var firstCellText = $("td:eq(0)", this).text();              
+                window.location.href = 'ViewSubSport.html?SportName=' + firstCellText;
+            });
+        });
+
+     
+		
+    </script>
+
+    <script language="javascript" type="text/javascript">
+
+        
+
+        function seA() {
+
+            var s = $("#BtnA").text();
+            $('input').val(s);
+            //$('SportsGrid');
+        }
+
+        function seB() {
+
+            var s = $("#BtnB").text();
+            $('input').val(s);
+        }
+
+        function seC() {
+
+            var s = $("#BtnC").text();
+            $('input').val(s);
+        }
+
+        function seD() {
+
+            var s = $("#BtnD").text();
+            $('input').val(s);
+        }
+
+        function seE() {
+
+            var s = $("#BtnE").text();
+            $('input').val(s);
+        }
+        function seF() {
+
+            var s = $("#BtnF").text();
+            $('input').val(s);
+        }
+        function seG() {
+
+            var s = $("#BtnG").text();
+            $('input').val(s);
+        }
+        function seH() {
+
+            var s = $("#BtnH").text();
+            $('input').val(s);
+        }
+        function seI() {
+
+            var s = $("#BtnI").text();
+            $('input').val(s);
+        }
+        function seJ() {
+
+            var s = $("#BtnJ").text();
+            $('input').val(s);
+        }
+        function seK() {
+
+            var s = $("#BtnK").text();
+            $('input').val(s);
+        }
+        function seL() {
+
+            var s = $("#BtnL").text();
+            $('input').val(s);
+        }
+        function seM() {
+
+            var s = $("#BtnM").text();
+            $('input').val(s);
+        }
+        function seN() {
+
+            var s = $("#BtnN").text();
+            $('input').val(s);
+        }
+        function seO() {
+
+            var s = $("#BtnO").text();
+            $('input').val(s);
+        }
+        function seP() {
+
+            var s = $("#BtnP").text();
+            $('input').val(s);
+        }
+        function seQ() {
+
+            var s = $("#BtnQ").text();
+            $('input').val(s);
+        }
+        function seR() {
+
+            var s = $("#BtnR").text();
+            $('input').val(s);
+        }
+        function seS() {
+
+            var s = $("#BtnS").text();
+            $('input').val(s);
+        }
+        function seT() {
+
+            var s = $("#BtnT").text();
+            $('input').val(s);
+        }
+        function seU() {
+
+            var s = $("#BtnU").text();
+            $('input').val(s);
+        }
+        function seV() {
+
+            var s = $("#BtnV").text();
+            $('input').val(s);
+        }
+        function seW() {
+
+            var s = $("#BtnW").text();
+            $('input').val(s);
+        }
+        function seX() {
+
+            var s = $("#BtnX").text();
+            $('input').val(s);
+        }
+        function seY() {
+
+            var s = $("#BtnY").text();
+            $('input').val(s);
+        }
+        function seZ() {
+
+            var s = $("#BtnZ").text();
+            $('input').val(s);
+           
+        }
+    
+    </script>
+</head>
+<body>
+    <div id="wraper">
+     <header>
+          <nav>
+              <ul class="clearfix">
+                  <li>
+                      <a href="SportsDefinitions.html" target="_self" title="Sports" >Sports</a>
+                  </li>
+                  <li>
+                      <a href="createArticle.html" title="Articles" target="_self">Articles</a>
+                  </li>
+                  <li>
+                      <a href="CreateTeam.html" title="Teams" target="_self">Teams</a>
+                  </li>
+                  
+                  <li>
+                      <a href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a>
+                  </li>
+              </ul>
+          </nav>
+      </header>
+       <!-- header ends -->
+        <div class="innermenu">
+                <ul class="clearfix">
+                    <li><a href="index.html" title="home" target="_self">Home</a> </li>
+                    <li class="sep"></li>
+                    <li><a href="userprofile.html" title="profile" target="_self">Profile</a> </li>
+                    
+                </ul>
+            </div>
+        <!-- container starts-->
+        <div class="contetns clearfix">
+            <!-- left area starts-->
+            <div class="contentLeft fLeft">
+                <div class="innerwrapper">
+                    <!-- contentLeft -->
+                    <div style="background-color:#8080E8">
+                    <h6>General Sports</h6>
+                     <p><b>Please view K2PS on your desktop, laptop or tablet for all options available in chosing from our 30,000 sport selections.</b></p>
+
+                     <p>In General Sports you can select your sport by:</p>
+                      <p>(1) Type in the Name of the Sport to Begin Search</p>
+                      <p>(2) Utilize the arrow to view all of the sports listed in this option</p>
+                </div>
+                   
+                    <div class="clearfix">
+                        <div class="sportSubNav fLeft">
+                            <a href="SportsDefinitions.html"><span >General Sports</span> </a>
+                        </div>
+                        <div class="sportSubNav fLeft">
+                            <a href="SportsDefinitionsSpecialOlympics.html"><span>Special Olympics</span> </a>
+                        </div>
+                        <div class="sportSubNav fLeft">
+                            <a href="SportsDefinitionsGenderId.html"><span>Sports by Gender/ID</span> </a>
+                        </div>
+                        <div class="sportSubNav fLeft">
+                            <a href="SportsDefinitionsCountries.html"><span>Sports by Country</span> </a>
+                        </div>
+                        <div class="sportSubNav fLeft">
+                            <a href="SportsDefinitionsColleges.html" target="_self" ><span>College/University Sports</span> </a>
+                        </div>
+                          <div class="sportSubNav fLeft">
+                            <a href="SportsDefinitionsCollegesInt.html" target="_self" ><span>International College/University Sports</span> </a>
+                        </div>
+                         <div class="sportSubNav fLeft">
+                            <a href="SportsDefinitionsHighSchool.html" target="_self" ><span>Sports By High School</span> </a>
+                        </div>
+                         <div class="sportSubNav fLeft">
+                            <a href="SportsDefinitionOlympics.html" target="_self" ><span>Olympics/Paralympics</span> </a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div>  
+                <label id="BtnA"onclick="seA()">A</label> 
+                <label id="BtnB"onclick="seB()">B</label>
+                <label id="BtnC"onclick="seC()">C</label> 
+                <label id="BtnD"onclick="seD()">D</label>
+                <label id="BtnE"onclick="seE()">E</label>
+                <label id="BtnF"onclick="seF()">F</label>
+                <label id="BtnG"onclick="seG()">G</label>
+                <label id="BtnH"onclick="seH()">H</label>
+                <label id="BtnI"onclick="seI()">I</label>
+                <label id="BtnJ"onclick="seJ()">J</label>
+                <label id="BtnK"onclick="seK()">K</label>
+                <label id="BtnL"onclick="seL()">L</label>
+                <label id="BtnM"onclick="seM()">M</label>
+                <label id="BtnN"onclick="seN()">N</label>
+                <label id="BtnO"onclick="seO()">O</label>
+                <label id="BtnP"onclick="seP()">P</label>
+                <label id="BtnQ"onclick="seQ()">Q</label>
+                <label id="BtnR"onclick="seR()">R</label>
+                <label id="BtnS"onclick="seS()">S</label>
+                <label id="BtnT"onclick="seT()">T</label>
+                <label id="BtnU"onclick="seU()">U</label>
+                <label id="BtnV"onclick="seV()">V</label>
+                <label id="BtnW"onclick="seW()">W</label>
+                <label id="BtnX"onclick="seX()">X</label>
+                <label id="BtnY"onclick="seY()">Y</label>
+                <label id="BtnZ"onclick="seZ()">Z</label>
+
+                </div>
+                <br />
+              
+                <table id="SportsGrid" class="display">
+                    <thead>
+                        
+                        <tr>
+                            <th style="width:80px;">
+                                Name
+                            </th>
+                            <th style="width:80px;">
+                                Sports
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5">
+                                <img src='images/ajax-loader.gif' />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="errorMessage">
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+              </div>
+            <!-- left area ends-->
+            <!-- advertisement area starts-->
+            
+            <!-- advertisement area ends-->
+        </div>
+        <!-- container ends-->
+        <!-- footer starts -->
+        <div id="footerWrap">
+          <footer>
+             <a href="userprofile.html" title="home" target="_self">Home</a>
+              <a href="static/Affiliates.html" title="Affiliates" target="_self">Affiliates</a>
+              <a href="static/CollegiateRecruiting.html"title="Collegiate Recruiting" target="_self">Collegiate Recruiting</a>
+              <a href="static/NewsAndEvents.html"title="News & Events" target="_self">News & Events</a>
+              <a href="ViewSubSport.html?SportName=Sports Health and Fitness" title="Sports Health & Fitness" target="_self">Sports Health & Fitness</a>
+              <a href="static/Write4Kids2ProSports.html"title="Write4K2PS" target="_self">Write4K2PS</a>
+              <a href="Ecomm/PersonalHomePage.html" title="PersonalHomePage" target="_self">PersonalHomePage</a>
+          </footer>
+          <div class="dots clear"></div>
+          <!-- Social Icon -->
+          <div class="clearfix">
+              <div class="copyright">&copy; Copyright 2010<br>Kids2prosports.com</div>
+                <div class="socialIcons">
+                    <a href="http://www.facebook.com/pages/Kids2ProSportscom/246679545408252" title="facebook" target="_self"> <img alt="facebook" src="images/m.facebook.png"/></a>
+                           <a href="http://www.myspace.com/kids2prosports" title="myspace" target="_self"><img alt="myspace" src="images/m.myspace.png"/></a>
+                           <a href="http://groups.yahoo.com/group/Kids2ProSports" title="yahoo"><img alt="yahoo" src="images/m.yahoo.png"/></a>
+                           <a href="http://www.reddit.com/r/sports/comments/pamgt/kids2prosports_expands_it_international_sports/?already_submitted=true"title="reddit" target="_self"><img alt="reddit" src="images/m.reddit.png"/></a>
+                           <a href="http://www.linkedin.com/in/kids2prosports  "" title="linkdin"> <img alt="linkdin" src="images/m.linkedin.png"/></a> 
+                           <a href="http://www.flickr.com/photos/kids2prosports/" title="Flicker" target="_self"> <img alt="Flicker" src="images/m.flckr.png"/></a>
+                           <a href="http://www.youtube.com/user/Kids2ProSports?ytsession=z-2bpR1F6KkzxpJXqUAuSu8npv_EAufzd8UxWG-wO5M7JJFFtEn4bzGiAjxyK77nRARXqOXvl0_lHPWLZSbjPLH5W6VE-Awt2DS2O0P13TfAJJIPjPnsPg2r0pvhvlcPvhJAC41cGiHg_FmPuR7MnwCoUVwPrdqonK2wykowr7AfvwqJbBaiQ4qoO7Z7M7ixFyTv2MB6OnHSs0Ztf6LbmUb8dI6xfiexczjVBMOjViU" title="Youtube" target="_self"> <img alt="Youtube" src="images/m.youtube.png"/></a>
+                          
+                </div>
+            </div>
+            <!-- Social Icon -->
+        </div>
+        <!-- footer ends -->
+    </div>
+</body>
+</html>
