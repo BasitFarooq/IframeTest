@@ -2,18 +2,17 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>SportsDefinitions</title>
+    <title>SportsDefinitionsCountries</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
     <meta content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;"
         name="viewport" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/media/images/favicon.ico" />
     <link href="media/css/demo_table.css" rel="stylesheet" type="text/css" />
-    <link href="media/css/demo_page.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript">
-
+        var oTable;
         $(document).ready(function () {
             var online = navigator.onLine;    // Detecting the internet connection
             if (online) {
@@ -22,61 +21,51 @@
                 alert('You\'re Offline now...');
                 return false;
             }
-        
-            $('#example').dataTable();
+
+            $("#SportsGrid tbody tr").live('click', function () {
+                var firstCellText = $("td:eq(0)", this).text();
+                window.location.href = 'ViewSubSport.html?SportName=' + firstCellText;
+            });
             function renderTable(result) {
                 var dtData = [];
                 $.each(result, function () {
                     dtData.push([
-                          this.Name,  
-                           this.Sport
+                           this.Name,
+                           this.Country
 
                         ]);
-                });
-               
-                $('#SportsGrid').dataTable({ //SportsGrid is the id of the table
+    });
+
+                $('#SportsGrid').dataTable({ //grid is the id of the table
                     'aaData': dtData,
                     'bLengthChange': false,
                     'bRetrieve': true,
-		            'bFilter': true,
-		            'bSort': false,
-		            'bInfo': false
+                    'bFilter': true,
+                    'bSort': false,
+                    'bInfo': false
                 });
             }
-
-            $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SourceSportDataGrid.asmx/GetAllSports',
+           $.ajax({
+                url: 'http://2bvision.com/kids2promobile/SportsByCountry.asmx/GetSportsByCountry',
                 type: 'POST',
-                data: "{'HasGenderAge': '" + false + "','IsCountry':'" + false + "' ,'IsCollegeInt':'" + false + "','IsCollegeUSA':'" + false + "' ,'IsOlympic':'" + false + "'  ,'MajorSport':'Special Olympics','MajorSport2':'High School'}",
+                data: "{'MajorSport':'Countries','MajorSport2':'High School'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
-              
+                    //
                     renderTable(response.d);
                 },
                 failure: function (errMsg) {
                     $('#errorMessage').text(errMsg); //errorMessage is id of the div
                 }
             });
-
-        });
-
-        $(document).ready(function () {
-            $("#SportsGrid tbody tr").live('click', function () {
-                var firstCellText = $("td:eq(0)", this).text();              
-                window.location.href = 'ViewSubSport.html?SportName=' + firstCellText;
-            });
-        });
-
-     
-		
+ });
     </script>
-
-   
 </head>
 <body>
-    <div id="wraper">
-     <header>
+    <div>
+        <div id="wraper">
+         <header>
           <nav>
               <ul class="clearfix">
                   <li>
@@ -88,15 +77,14 @@
                   <li>
                       <a href="CreateTeam.html" title="Teams" target="_self">Teams</a>
                   </li>
-                  
                   <li>
                       <a href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a>
                   </li>
               </ul>
           </nav>
       </header>
-       <!-- header ends -->
-        <div class="innermenu">
+            <!-- header ends -->
+             <div class="innermenu">
                 <ul class="clearfix">
                     <li><a href="index.html" title="home" target="_self">Home</a> </li>
                     <li class="sep"></li>
@@ -104,36 +92,48 @@
                     
                 </ul>
             </div>
-        <!-- container starts-->
-        <div class="contetns clearfix">
-            <!-- left area starts-->
-            <div class="contentLeft fLeft">
-                <div class="innerwrapper">
-                    <!-- contentLeft -->
-                    <div style="background-color:#8080E8">
-                    <h6>General Sports</h6>
-                     <p><b>Please view K2PS on your desktop, laptop or tablet for all options available in chosing from our 30,000 sport selections.</b></p>
+            <!-- container starts-->
+            <div class="contetns clearfix">
+                <!-- left area starts-->
+                <div class="contentLeft fLeft">
+                    <div class="innerwrapper">
+                        <!-- contentLeft -->
+                       <div class="clear">
+                           
+                        </div>
 
-                     <p>In General Sports you can select your sport by:</p>
-                      <p>(1) Type in the Name of the Sport to Begin Search</p>
-                      <p>(2) Utilize the arrow to view all of the sports listed in this option</p>
-                </div>
-                   
+                        <div style="background-color:#8080E8">
+                                                           
+                             <h6>Sports by Country</h6>
+                              <p><b>Please view K2PS on your desktop, laptop or tablet for all options available in chosing from our 30,000 sport selections.</b></p>
+                           <p>In Sports by Country you have countries that are featured on Kids2ProSports.com</p>
+                             <p>(1) Type in the Name of the Sport to Begin Search</p>
+                             <p>(2) Utilize the “< >” links to view all of the sports listed in this option</p>
+             
+                       </div>
+                       <div style="padding-left: 50px">
+                            <table id="list4">
+                            </table>
+                        </div>
+                      <div id="pager" style="padding-left: 50px">
+                        </div>
+                    </div>
+                    <br />
                     <div class="clearfix">
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitions.html"><span >General Sports</span> </a>
+                            <a href="SportsDefinitions.html" target="_self"><span>General Sports</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsSpecialOlympics.html"><span>Special Olympics</span> </a>
+                            <a href="SportsDefinitionsSpecialOlympics.html" target="_self"><span>Special Olympics</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsGenderId.html"><span>Sports by Gender/ID</span> </a>
+                            <a href="SportsDefinitionsGenderId.html" target="_self"><span>Sports by Gender/ID</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsCountries.html"><span>Sports by Country</span> </a>
+                            <a href="SportsDefinitionsCountries.html" target="_self"><span>Sports by Country</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsColleges.html" target="_self" ><span>College/University Sports</span> </a>
+                           <a href="SportsDefinitionsColleges.html" target="_self" ><span>College/University Sports</span> </a>
                         </div>
                           <div class="sportSubNav fLeft">
                             <a href="SportsDefinitionsCollegesInt.html" target="_self" ><span>International College/University Sports</span> </a>
@@ -145,48 +145,44 @@
                             <a href="SportsDefinitionOlympics.html" target="_self" ><span>Olympics/Paralympics</span> </a>
                         </div>
                     </div>
-                </div>
-                <br />
-              
-                <br />
-              
-                <table id="SportsGrid" class="display">
-                    <thead>
-                        
-                        <tr>
-                            <th style="width:80px;">
-                                Name
-                            </th>
-                            <th style="width:80px;">
-                                Sports
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="5">
-                                <img src='images/ajax-loader.gif' />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="errorMessage">
-                </div>
-                <br />
-                <br />
-                <br />
-                <br />
-              </div>
+                    <br />
+                    <table id="SportsGrid" class="display">
+                        <thead>
+                            <tr>
+                                <th style="width:80px;text-align:left;">
+                                    Name
+                                </th>
+                                <th style="width:80px;text-align:left;">
+                                    Country
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5">
+                                    <img src='images/ajax-loader.gif'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="errorMessage">
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+            </div>
             <!-- left area ends-->
             <!-- advertisement area starts-->
-            
+            <div class="contentRight fRight">
+                </div>
             <!-- advertisement area ends-->
         </div>
         <!-- container ends-->
         <!-- footer starts -->
         <div id="footerWrap">
           <footer>
-             <a href="userprofile.html" title="home" target="_self">Home</a>
+              <a href="userprofile.html" title="home" target="_self">Home</a>
               <a href="static/Affiliates.html" title="Affiliates" target="_self">Affiliates</a>
               <a href="static/CollegiateRecruiting.html"title="Collegiate Recruiting" target="_self">Collegiate Recruiting</a>
               <a href="static/NewsAndEvents.html"title="News & Events" target="_self">News & Events</a>
@@ -205,7 +201,6 @@
                            <a href="http://www.reddit.com/r/sports/comments/pamgt/kids2prosports_expands_it_international_sports/?already_submitted=true"title="reddit" target="_self"><img alt="reddit" src="images/m.reddit.png"/></a>
                            <a href="http://www.linkedin.com/in/kids2prosports  "" title="linkdin"> <img alt="linkdin" src="images/m.linkedin.png"/></a> 
                            <a href="http://www.flickr.com/photos/kids2prosports/" title="Flicker" target="_self"> <img alt="Flicker" src="images/m.flckr.png"/></a>
-                           <a href="http://www.youtube.com/user/Kids2ProSports?ytsession=z-2bpR1F6KkzxpJXqUAuSu8npv_EAufzd8UxWG-wO5M7JJFFtEn4bzGiAjxyK77nRARXqOXvl0_lHPWLZSbjPLH5W6VE-Awt2DS2O0P13TfAJJIPjPnsPg2r0pvhvlcPvhJAC41cGiHg_FmPuR7MnwCoUVwPrdqonK2wykowr7AfvwqJbBaiQ4qoO7Z7M7ixFyTv2MB6OnHSs0Ztf6LbmUb8dI6xfiexczjVBMOjViU" title="Youtube" target="_self"> <img alt="Youtube" src="images/m.youtube.png"/></a>
                           
                 </div>
             </div>
