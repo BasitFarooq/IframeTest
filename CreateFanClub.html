@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html> 
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+<style type="text/css">
+*, html, body, iframe  { margin:0; padding:0; border:0 none; outline:none; }
+</style> 
+
+ <script language="JavaScript" type="text/javascript">
+     function makeFrame() {
+         ifrm = document.getElementById("IFRAME");
+         ifrm.setAttribute("src", "http://2bvision.com/Kids2promobile/mobileversion/CreateFanClub.html/");
+         ifrm.style.width = 100 + "%";
+         ifrm.style.height = 100 + "%";
+         document.body.appendChild(ifrm);
+     } 
+     function loaded() {
+         var visitor = navigator.onLine ? "ONLINE" : "OFFLINE";
+
+         if (visitor == "ONLINE") {
+  
+             makeFrame();
+         } else if (visitor == "OFFLINE") {
+             alert("Active Internet Connection Required");
+             window.close();
+         }
+     }
+   </script>
+
+</head> 
+<body onload="loaded()" > 
+ <iframe id="IFRAME"></iframe>
+
+    <div id="status"><p id="state"></p></div>
+   <div id="log"></div>
+
+</body> 
+</html>
